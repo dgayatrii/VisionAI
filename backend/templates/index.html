@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Diabetic Retinopathy Detection</h2>
+    <form id="f" enctype="multipart/form-data">
+      Name: <input name="name" /><br/>
+      Patient ID: <input name="patient_id" /><br/>
+      Left Eye: <input type="file" name="left_eye" /><br/>
+      Right Eye: <input type="file" name="right_eye" /><br/>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="out"></div>
+<script>
+document.getElementById('f').onsubmit = async (e)=>{
+  e.preventDefault();
+  const form = new FormData(e.target);
+  const res = await fetch('http://127.0.0.1:5000/predict-multi',{method:'POST', body: form});
+  const j = await res.json();
+  document.getElementById('out').innerHTML = `
+    <pre>${JSON.stringify(j, null, 2)}</pre>
+    <a href="http://127.0.0.1:5000/report/${j.report_id}" target="_blank" download>Download PDF Report</a>
+  `;
+};
+</script>
+
+    </script>
+  </body>
+</html>
