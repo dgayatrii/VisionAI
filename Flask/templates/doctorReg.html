@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Aleo:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Albert Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        'primary-teal': '#17A1ED',
+                        'secondary-dark': '#052818',
+                        'background-light': '#EEEEEE',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-light font-sans min-h-screen flex flex-col">
+
+    <main class="flex flex-1 flex-col md:flex-row w-full overflow-hidden bg-white">
+      <section class="p-4 md:p-8 md:w-[45%] flex flex-col">
+          <a href="{{ url_for('home') }}" class="text-secondary-dark hover:text-primary-teal font-medium transition duration-300 mb-4">
+              Go to Home
+          </a>
+            <h2 class="text-3xl font-bold text-secondary-dark ">Join Our Network</h2>
+            <p class="text-gray-500 mb-4">Register your medical profile to get started.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="mb-4">
+                  {% for category, message in messages %}
+                    <div class="p-3 rounded-lg text-sm
+                      {% if category == 'danger' %} bg-red-100 border border-red-300 text-red-700
+                      {% elif category == 'success' %} bg-green-100 border border-green-300 text-green-700
+                      {% elif category == 'warning' %} bg-yellow-100 border border-yellow-300 text-yellow-700
+                      {% else %} bg-blue-100 border border-blue-300 text-blue-700 {% endif %}"
+                      role="alert">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <form id="doctorRegistrationForm" class="space-y-2 flex-grow" action="{{ url_for('doctor_register') }}" method="post">
+                <div>
+                    <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="fullName" name="full_name" required placeholder="Your Name"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required minlength="8" placeholder="password"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="contactNumber" class="block text-sm font-medium text-gray-700">Contact Number</label>
+                    <input type="tel" id="contactNumber" name="contact_number" required pattern="[0-9]{10,15}" placeholder="+91"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="username" required placeholder="example@gmail.com"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="hospitalName" class="block text-sm font-medium text-gray-700">Hospital/Clinic Name</label>
+                    <input type="text" id="hospitalName" name="hospital_name" required placeholder="Hospital Name"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="medicalId" class="block text-sm font-medium text-gray-700">Medical License ID</label>
+                    <input type="text" id="medicalId" name="medical_id" required placeholder="123-"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div class="flex items-start pt-2">
+                    <div class="flex items-center h-5">
+                        <input id="terms" name="terms" type="checkbox" required
+                            class="focus:ring-primary-teal h-4 w-4 text-primary-teal border-gray-300 rounded">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="terms" class="font-medium text-gray-700">I agree to the
+                            <a href="#" class="text-primary-teal hover:underline">Terms and Conditions</a></label>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button type="submit"
+                        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-lg shadow-lg text-sm font-medium text-white bg-primary-teal hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-teal transition duration-300 ease-in-out transform hover:scale-[1.01]">
+                        Register Account
+                    </button>
+                </div>
+                <p class="text-center text-sm text-gray-600 pt-2">
+                    Already have an account?
+                    <a href="{{ url_for('doctor_login') }}" class="font-bold text-primary-teal hover:text-secondary-dark transition duration-300">
+                        Log in here
+                    </a>
+                </p>
+            </form>
+        </section> <section class="hidden md:block md:w-[55%] bg-primary-teal relative overflow-hidden">
+            <img src="{{ url_for('static', filename='images/doctor/register.png') }}" alt="Professional Doctor Network"
+                 class="w-full h-full object-cover">
+        </section> </main>
+
+    </body>
+</html>

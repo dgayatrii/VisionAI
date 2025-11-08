@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>Our Services - AI-Driven Retinal Screening</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Aleo:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/globals.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleguide.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}" />
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <!-- Main Content Area -->
+  <!-- Main Content Area -->
+  <main>
+    <!-- Title and Subtitle Section -->
+    <section class="text-center pt-24 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="font-aleo text-4xl sm:text-5xl font-extrabold mb-4">
+        Our Services
+      </h1>
+      <p class="text-lg text-gray-500 font-medium">
+        AI-driven retinal screening for early detection of diabetic retinopathy, with clear reports for informed
+        healthcare decisions
+      </p>
+    </section>
+
+    <!-- Services Grid Section - Light blue background starts here -->
+    <section class="bg-blue-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Layout Container: Tall card on left (1/3) and 2x2 grid on right (2/3) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <!-- 1. Automated Screening (Tall Feature Card) - Spans 1 column -->
+          <!-- Now directly on the background, without the card container styling -->
+          <div class="p-8 h-full flex flex-col lg:col-span-1">
+            <div class="flex pb-2">
+              <!-- Icon -->
+              <img src="../static/images/services/1.svg" alt="Work Icon" class="w-16">
+
+              <h2 class="w-[60%] font-aleo text-2xl pl-2 justify-center font-bold">Automated Screening</h2>
+            </div>
+            <p class="text-gray-500 mb-2">
+              AI-powered system automatically analyzes retinal images with high accuracy
+            </p>
+
+            <!-- Button -->
+            <a href="#"
+              class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-3xl transition-all duration-200 hover:bg-blue-700 shadow-md hover:shadow-xl">
+              Generate Report
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- 2. Right Side 2x2 Grid - Spans 2 columns -->
+          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- AI-Powered Analysis Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">AI-Powered Analysis</h3>
+                <p class="text-gray-500 mb-4">
+                  Our intelligent system automatically detects diabetic retinopathy from retinal images with high
+                  precision, ensuring reliable results.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Time-Saving Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Time-Saving</h3>
+                <p class="text-gray-500 mb-4">
+                  Automation minimizes waiting time by analyzing images within seconds, allowing patients and doctors to
+                  receive faster diagnostic insights.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- User Friendly Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">User Friendly</h3>
+                <p class="text-gray-500 mb-4">
+                  Simple, intuitive design ensures smooth operation for healthcare professionals and patients alike.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Continuous Learning Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Continuous Learning</h3>
+                <p class="text-gray-500 mb-4">
+                  The AI model improves over time by learning from new image data, enhancing detection performance
+                  continuously.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Layout Container: Tall card on left (1/3) and 2x2 grid on right (2/3) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <!-- 1. Automated Screening (Tall Feature Card) - Spans 1 column -->
+          <!-- Now directly on the background, without the card container styling -->
+          <div class="p-8 h-full flex flex-col lg:col-span-1">
+            <div class="flex pb-2">
+              <!-- Icon -->
+              <img src="../static/images/services/2.svg" alt="Work Icon" class="w-16">
+
+              <h2 class="w-[60%] font-aleo text-2xl pl-2 justify-center font-bold">Report Generation</h2>
+            </div>
+            <p class="text-gray-500 mb-2">
+              Receive detailed, easy-to-understand reports generated instantly after screening.
+            </p>
+
+            <!-- Button -->
+            <a href="#"
+              class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-3xl transition-all duration-200 hover:bg-blue-700 shadow-md hover:shadow-xl">
+              Generate Report
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- 2. Right Side 2x2 Grid - Spans 2 columns -->
+          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- AI-Powered Analysis Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Instant Results</h3>
+                <p class="text-gray-500 mb-4">
+                  Get comprehensive reports generated immediately after screening, helping speed up diagnosis and
+                  next-step decision-making. </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Time-Saving Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Downloadable and Shareable</h3>
+                <p class="text-gray-500 mb-4">
+                  Reports can be exported digitally, enabling smooth communication between patients and doctors.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- User Friendly Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Secure and Encrypted</h3>
+                <p class="text-gray-500 mb-4">
+                  All patient data and reports are encrypted to ensure complete privacy and protection.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Continuous Learning Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Summarized View</h3>
+                <p class="text-gray-500 mb-4">
+                  Each report includes a concise summary of key findings for quick reference by medical professionals.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="bg-blue-50 py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Layout Container: Tall card on left (1/3) and 2x2 grid on right (2/3) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <!-- 1. Automated Screening (Tall Feature Card) - Spans 1 column -->
+          <!-- Now directly on the background, without the card container styling -->
+          <div class="p-8 h-full flex flex-col lg:col-span-1">
+            <div class="flex pb-2">
+              <!-- Icon -->
+              <img src="../static/images/services/3.svg" alt="Work Icon" class="w-16">
+
+              <h2 class="w-[60%] text-2xl pl-2 justify-center font-bold">Remote Accessibility</h2>
+            </div>
+            <p class="text-gray-500 mb-2">
+              Access your screenings and reports no matter where you are.
+            </p>
+
+            <!-- Button -->
+            <a href="#"
+              class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-3xl transition-all duration-200 hover:bg-blue-700 shadow-md hover:shadow-xl">
+              Generate Report
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- 2. Right Side 2x2 Grid - Spans 2 columns -->
+          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- AI-Powered Analysis Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Lightweight Model</h3>
+                <p class="text-gray-500 mb-4">
+                  Our AI model runs efficiently even on low-power devices, making it accessible in remote or
+                  resource-limited areas.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Time-Saving Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Access Anytime, Anywhere</h3>
+                <p class="text-gray-500 mb-4">
+                  Patients and doctors can securely view reports and screening results from any device, at any time.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- User Friendly Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Instant Results</h3>
+                <p class="text-gray-500 mb-4">
+                  Get comprehensive reports generated immediately after screening, helping speed up diagnosis and
+                  next-step decision-making.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Continuous Learning Card -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Downloadable and Shareable</h3>
+                <p class="text-gray-500 mb-4">
+                  Reports can be exported digitally, enabling smooth communication between patients and doctors.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Layout Container: Tall card on left (1/3) and 2x2 grid on right (2/3) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+          <!-- 1. Automated Screening (Tall Feature Card) - Spans 1 column -->
+          <!-- Now directly on the background, without the card container styling -->
+          <div class="p-8 h-full flex flex-col lg:col-span-1">
+            <div class="flex pb-2">
+              <!-- Icon -->
+              <img src="../static/images/services/4.svg" alt="Work Icon" class="w-16">
+
+              <h2 class="w-[50%] font-aleo text-2xl pl-2 justify-center font-bold">Early Detection</h2>
+            </div>
+            <p class="text-gray-500 mb-2">
+              Early identification of risks allows for timely interventions, proactive care, and regular monitoring.
+            </p>
+
+            <!-- Button -->
+            <a href="#"
+              class="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-semibold text-lg rounded-3xl transition-all duration-200 hover:bg-blue-700 shadow-md hover:shadow-xl">
+              Generate Report
+              <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- 2. Right Side 2x2 Grid - Spans 2 columns -->
+          <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- AI-Powered Analysis Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Proactive Identification</h3>
+                <p class="text-gray-500 mb-4">
+                  Detect diabetic retinopathy in its earliest stages before symptoms appear, giving patients a crucial
+                  head start.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Time-Saving Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Risk Assessment </h3>
+                <p class="text-gray-500 mb-4">
+                  The system classifies patients based on severity, helping prioritize those needing urgent attention.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- User Friendly Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Empowering Patients</h3>
+                <p class="text-gray-500 mb-4">
+                  Encourages patients to stay informed and actively participate in maintaining their eye health.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+            <!-- Continuous Learning Card -->
+            <div class="bg-blue-50 p-8 rounded-3xl shadow-lg flex flex-col justify-between">
+              <div>
+                <h3 class="font-aleo text-xl font-bold mb-3">Vision Preservation Goal</h3>
+                <p class="text-gray-500 mb-4">
+                  Ultimately aims to reduce preventable blindness by catching problems at the earliest stage possible.
+                </p>
+              </div>
+              <!-- Accent Line -->
+              <div class="w-1/3 h-1 bg-blue-500 rounded-full"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  {% include 'footer.html' %}
+
+</body>
+
+</html>

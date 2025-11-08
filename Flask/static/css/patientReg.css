@@ -1,0 +1,705 @@
+.patient-reg {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  min-width: 1920px;
+  min-height: 1024px;
+  position: relative;
+}
+
+.patient-reg .nav {
+  display: flex;
+  width: 1922px;
+  height: 82px;
+  align-items: center;
+  gap: 1170px;
+  padding: 33px 64px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--div);
+}
+
+
+.patient-reg .groupp {
+     position: relative;
+    top: 45px;
+    left: 45px;
+}
+.patient-reg a{
+  font-family: 'Albert Sans';
+  text-decoration: none;
+  color: black;
+}
+.patient-reg a:hover{
+  text-decoration: underline
+}
+
+.patient-reg .arrow {
+  margin-top: 2.6px;
+  width: 16px;
+  height: 14.73px;
+  margin-left: -1px;
+}
+
+.doctor-reg .text-wrapper-2 {
+  width: 45px;
+  height: 19px;
+  font-family: "Albert Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  white-space: nowrap;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.patient-reg .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -5.00px;
+  margin-bottom: -3.00px;
+  font-family: "Albert Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 32px;
+  position: relative;
+  flex: 0 0 auto;
+  margin-top: -5.00px;
+  margin-bottom: -3.00px;
+}
+
+.patient-reg .div {
+  position: relative;
+  width: 404px;
+  height: 24px;
+}
+
+.patient-reg .frame-2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 813px;
+  height: 943px;
+}
+
+.patient-reg .text-wrapper-2 {
+  position: absolute;
+  top: 115px;
+  left: calc(50.00% - 96px);
+  font-family: "Albert Sans-Black", Helvetica;
+  font-weight: 900;
+  color: #052818;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.patient-reg .already-a-have-an {
+  position: absolute;
+  top: 649px;
+  left: calc(50.00% - 144px);
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .span {
+  color: #939896;
+}
+
+.patient-reg .text-wrapper-3 {
+  color: #17a1ed;
+  text-decoration: underline;
+}
+
+.patient-reg .group {
+  position: absolute;
+  top: 205px;
+  left: 131px;
+  width: 524px;
+  height: 70px;
+}
+
+.patient-reg .text-wrapper-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Albert Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .text-wrapper-5 {
+  position: absolute;
+  top: 39px;
+  left: 16px;
+  width: 95px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.patient-reg .rectangle {
+  left: calc(50.00% - 262px);
+  width: 520px;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+}
+
+.patient-reg .group-2 {
+  position: absolute;
+  top: 291px;
+  left: 131px;
+  width: 224px;
+  height: 70px;
+}
+
+.patient-reg .text-wrapper-6 {
+  top: 39px;
+  left: 16px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  position: absolute;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .rectangle-2 {
+  left: calc(50.00% - 112px);
+  width: 220px;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+}
+
+.patient-reg .group-3 {
+  position: absolute;
+  top: 377px;
+  left: 131px;
+  width: 222px;
+  height: 70px;
+}
+
+.patient-reg .group-4 {
+  position: absolute;
+  top: 37px;
+  left: 16px;
+  width: 198px;
+  height: 24px;
+  display: flex;
+  gap: 137px;
+}
+
+.patient-reg .text-wrapper-7 {
+  margin-top: 2px;
+  width: 35px;
+  height: 19px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .vector-wrapper {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.patient-reg .vector {
+  position: absolute;
+  width: 50.00%;
+  height: 25.00%;
+  top: 33.33%;
+  left: 20.83%;
+}
+
+.patient-reg .rectangle-3 {
+  left: calc(50.00% - 111px);
+  width: 220px;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+}
+
+.patient-reg .group-5 {
+  position: absolute;
+  top: 291px;
+  left: 394px;
+  width: 261px;
+  height: 70px;
+}
+
+.patient-reg .text-wrapper-8 {
+  position: absolute;
+  top: 0;
+  left: 2px;
+  font-family: "Albert Sans-Medium", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .text-wrapper-9 {
+  position: absolute;
+  top: 39px;
+  left: 13px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .rectangle-4 {
+  left: calc(50.00% - 130px);
+  width: 257px;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+}
+
+.patient-reg .group-6 {
+  position: absolute;
+  top: 377px;
+  left: 394px;
+  width: 261px;
+  height: 70px;
+}
+
+.patient-reg .group-7 {
+  position: absolute;
+  top: 463px;
+  left: 131px;
+  width: 524px;
+  height: 70px;
+}
+
+.patient-reg .div-wrapper {
+  display: flex;
+  width: 181px;
+  height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 16.28px;
+  padding: 19.53px 66.74px;
+  position: absolute;
+  top: 584px;
+  left: calc(50.00% - 106px);
+  background-color: #17a1ed;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px #00000040;
+}
+
+.patient-reg .text-wrapper-10 {
+  position: relative;
+  width: fit-content;
+  margin-top: -10.53px;
+  margin-bottom: -8.53px;
+  margin-left: -23.24px;
+  margin-right: -23.24px;
+  font-family: "Albert Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.patient-reg .group-8 {
+  position: absolute;
+  top: 0;
+  left: 813px;
+  width: 1107px;
+  height: 986px;
+}
+
+.patient-reg .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1107px;
+  height: 944px;
+}
+
+.patient-reg .CHAIRS {
+  position: absolute;
+  width: 44.32%;
+  height: 23.34%;
+  top: 73.24%;
+  left: 0;
+}
+
+.patient-reg .CLOCK {
+  position: absolute;
+  width: 9.24%;
+  height: 10.36%;
+  top: 34.50%;
+  left: 58.53%;
+}
+
+.patient-reg .POSTERS {
+  position: absolute;
+  width: 487px;
+  height: 285px;
+  top: 310px;
+  left: 25px;
+}
+
+.patient-reg .DOCTOR {
+  position: absolute;
+  width: 27.54%;
+  height: 52.75%;
+  top: 47.25%;
+  left: 54.74%;
+}
+
+.patient-reg .MOTHER-CHILD {
+  position: absolute;
+  width: 21.38%;
+  height: 33.91%;
+  top: 62.53%;
+  left: 17.16%;
+}
+
+.patient-reg .group-9 {
+  position: absolute;
+  top: 630px;
+  left: calc(50.00% - 829px);
+  width: 400px;
+  height: 20px;
+}
+
+.patient-reg .i-agree-to-the-terms {
+  position: absolute;
+  top: 0;
+  left: calc(50.00% - 172px);
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: transparent;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient-reg .text-wrapper-11 {
+  color: #25a7ee;
+  text-decoration: underline;
+}
+
+.patient-reg .rectangle-5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: var(--div);
+}
+/* Original CSS should be injected here */
+
+.patient-reg .rectangle {
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+  padding: 0 16px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #052818;
+  font-size: 16px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.patient-reg .rectangle::placeholder {
+  color: #939896;
+}
+
+.patient-reg .rectangle-2 {
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+  padding: 0 16px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #052818;
+  font-size: 16px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.patient-reg .rectangle-2::placeholder {
+  color: #939896;
+}
+
+.patient-reg .group-3 {
+  position: absolute;
+  top: 377px;
+  left: 131px;
+  width: 222px;
+  height: 70px;
+}
+
+.patient-reg .select-wrapper {
+  position: relative;
+  width: 100%;
+  height: 43px;
+  top: calc(50.00% - 8px);
+}
+
+.patient-reg .rectangle-3 {
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+  padding: 0 16px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  font-size: 16px;
+  background-color: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.patient-reg .select-wrapper .vector-wrapper {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.patient-reg .rectangle-4 {
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: calc(50.00% - 8px);
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: var(--div);
+  padding: 0 13px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #052818;
+  font-size: 16px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.patient-reg .rectangle-4::placeholder {
+  color: #939896;
+}
+
+.patient-reg .div-wrapper {
+  display: flex;
+  width: 181px;
+  height: 49px;
+  align-items: center;
+  justify-content: center;
+  gap: 16.28px;
+  padding: 19.53px 66.74px;
+  position: absolute;
+  top: 584px;
+  left: calc(50.00% - 106px);
+  background-color: #17a1ed;
+  border-radius: 10px;
+  box-shadow: 0px 2px 2px #00000040;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.patient-reg .div-wrapper:hover {
+  background-color: #1590d6;
+}
+
+.patient-reg .div-wrapper:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.patient-reg .div-wrapper:active {
+  background-color: #127fb8;
+}
+
+.patient-reg .group-9 {
+  position: absolute;
+  top: 630px;
+  left: calc(50.00% - 829px);
+  width: 400px;
+  height: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.patient-reg .rectangle-5 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 5px;
+  border: 2px solid;
+  border-color: var(--div);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.patient-reg .rectangle-5:checked {
+  background-color: #17a1ed;
+  border-color: #17a1ed;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='white' d='M4.5 7.5L1.5 4.5L0.5 5.5L4.5 9.5L11.5 2.5L10.5 1.5L4.5 7.5Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.patient-reg .rectangle-5:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.patient-reg .i-agree-to-the-terms {
+  position: relative;
+  top: 0;
+  left: 0;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #939896;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.patient-reg .i-agree-to-the-terms .text-wrapper-3,
+.patient-reg .i-agree-to-the-terms .text-wrapper-11 {
+  color: #17a1ed;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.patient-reg .i-agree-to-the-terms .text-wrapper-3:hover,
+.patient-reg .i-agree-to-the-terms .text-wrapper-11:hover {
+  color: #1590d6;
+}
+
+.patient-reg .i-agree-to-the-terms .text-wrapper-3:focus,
+.patient-reg .i-agree-to-the-terms .text-wrapper-11:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.patient-reg .already-a-have-an .text-wrapper-3 {
+  color: #17a1ed;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.patient-reg .already-a-have-an .text-wrapper-3:hover {
+  color: #1590d6;
+}
+
+.patient-reg .already-a-have-an .text-wrapper-3:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+.patient-reg input:focus,
+.patient-reg select:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+  border-color: #4a90e2;
+}
+
+.patient-reg input:invalid:not(:placeholder-shown),
+.patient-reg select:invalid:not(:placeholder-shown) {
+  /* border-color: #e74c3c; */
+}
+
+.patient-reg input[type="number"]::-webkit-inner-spin-button,
+.patient-reg input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.patient-reg input[type="number"] {
+  -moz-appearance: textfield;
+}

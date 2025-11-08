@@ -1,0 +1,73 @@
+body {
+  font-family: 'Albert Sans', sans-serif;
+  color: #052818;
+}
+
+.homepage {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/homepage/Homepage.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+}
+
+.right {
+  display: flex;
+  gap: 24px;
+}
+
+.head {
+  color: #052818;
+  font-family: 'Aleo', serif;
+}
+
+.font-aleo {
+  font-family: 'Aleo', serif;
+}
+
+.button-gradient {
+  /* A subtle horizontal gradient for a more polished look */
+  background-image: linear-gradient(to right, #00A3FF, #00BFFF);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button-gradient:hover {
+  background-image: linear-gradient(to right, #00BFFF, #00A3FF);
+  /* Reverse gradient on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect */
+  box-shadow: 0 10px 15px -3px rgba(0, 163, 255, 0.5), 0 4px 6px -2px rgba(0, 163, 255, 0.05);
+}
+
+
+.services {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/homepage/services.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+}
+
+.patient {
+  background-color: #DDF8F8;
+}
+
+@media (min-width: 768px) {
+  .stat-item.bordered-l-md {
+    /* On desktop, use a left border as a separator */
+    border-left: 2px solid rgba(255, 255, 255, 0.7);
+  }
+
+  /* The JS adds 'border-t' for mobile separation, which needs to be overridden on desktop */
+  .stat-item {
+    border-top-width: 0 !important;
+  }
+}
+
+.why{
+  background-color: #F0F8FF;
+}

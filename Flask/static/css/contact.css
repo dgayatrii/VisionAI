@@ -1,0 +1,66 @@
+:root {
+  --primary-color: #007bff;
+  /* Blue for 'Get Started' */
+  --secondary-color: #2D3748;
+  /* Dark text */
+  --accent-light: #e0f2fe;
+  /* Lightest blue */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--accent-light);
+  overflow-x: hidden;
+}
+
+/* Custom styles to mimic the organic background shapes */
+.shape-bg {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.8;
+  filter: blur(100px);
+}
+
+.shape-1 {
+  top: -100px;
+  left: -100px;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(135deg, #a7f5f7, #cffafe);
+  /* Light Cyan/Aqua */
+  border-radius: 40% 60% 70% 30% / 50% 50% 50% 50%;
+}
+
+.shape-2 {
+  bottom: -150px;
+  right: -150px;
+  width: 450px;
+  height: 450px;
+  background: linear-gradient(-135deg, #dbeafe, #a5b4fc);
+  /* Light Blue/Indigo */
+  border-radius: 60% 40% 40% 60% / 60% 60% 40% 40%;
+}
+
+/* Icon styling */
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #bfdbfe;
+  /* Blue-200 */
+  color: var(--primary-color);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contact {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/contact/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+}

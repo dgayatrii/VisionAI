@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600&family=Aleo:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Albert Sans', 'sans-serif'], // Main font
+                    },
+                    colors: {
+                        'primary-teal': '#17A1ED',
+                        'secondary-dark': '#052818',
+                        'background-light': '#EEEEEE',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-light font-sans min-h-screen flex flex-col">
+
+    <main class="flex flex-1 flex-col md:flex-row w-full overflow-hidden bg-white">
+
+        <section class="p-8 md:w-[45%] flex flex-col">
+            <a href="{{ url_for('home') }}" class="text-secondary-dark hover:text-primary-teal font-medium transition duration-300">
+                Go to Home
+            </a>
+            <h2 class="text-4xl font-extrabold text-secondary-dark mt-4">Welcome Back!</h2>
+            <p class="text-gray-500 mb-6 text-lg">Enter credentials to access your dashboard.</p>
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="mb-4">
+                  {% for category, message in messages %}
+                    <div class="p-3 rounded-lg text-sm
+                      {% if category == 'danger' %} bg-red-100 border border-red-300 text-red-700
+                      {% elif category == 'success' %} bg-green-100 border border-green-300 text-green-700
+                      {% else %} bg-blue-100 border border-blue-300 text-blue-700 {% endif %}"
+                      role="alert">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <form id="doctorLoginForm" class="space-y-6 flex-grow flex flex-col justify-center" action="{{ url_for('doctor_login') }}" method="post">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="username" required placeholder="example@clinic.com"
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter your password"
+                        class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-xl shadow-sm focus:ring-primary-teal focus:border-primary-teal transition duration-200">
+                    <div class="text-right mt-1">
+                        <a href="#" class="text-sm font-medium text-primary-teal hover:underline">Forgot Password?</a>
+                    </div>
+                </div>
+                <div class="pt-2">
+                    <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-xl shadow-lg text-lg font-semibold text-white bg-primary-teal
+                        hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-teal
+                        transition duration-300 ease-in-out transform hover:scale-[1.01]">
+                        Log In
+                    </button>
+                </div>
+                <p class="text-center text-sm text-gray-600 pt-4">
+                    Don't have an account?
+                    <a href="{{ url_for('doctor_register') }}" class="font-bold text-primary-teal hover:text-secondary-dark transition duration-300">
+                        Register here
+                    </a>
+                </p>
+            </form>
+        </section> <section class="hidden md:block md:w-[55%] bg-primary-teal relative overflow-hidden">
+            <img src="{{ url_for('static', filename='images/doctor/login.png') }}" alt="Professional Doctor Network"
+                 class="w-full h-full object-cover">
+        </section> </main>
+
+    <div id="messageBox" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-50 transition-opacity duration-300 opacity-0" onclick="closeMessageBox()">
+        <div class="bg-white p-6 rounded-xl shadow-2xl max-w-sm w-full transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+            <h4 id="messageTitle" class="text-xl font-bold mb-4 text-primary-teal"></h4>
+            <p id="messageContent" class="text-gray-700 mb-6"></p>
+            <button onclick="closeMessageBox()" class="w-full py-2 px-4 rounded-lg text-white bg-primary-teal hover:bg-opacity-90 transition duration-200">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Custom message box functions (can still be used for other things)
+        function showMessageBox(title, message) {
+            const box = document.getElementById('messageBox');
+            document.getElementById('messageTitle').textContent = title;
+            document.getElementById('messageContent').textContent = message;
+            box.classList.remove('hidden');
+            setTimeout(() => {
+                box.classList.remove('opacity-0');
+                box.querySelector('div').classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeMessageBox() {
+            const box = document.getElementById('messageBox');
+            box.classList.add('opacity-0');
+            box.querySelector('div').classList.add('scale-95');
+            setTimeout(() => {
+                box.classList.add('hidden');
+            }, 300);
+        }
+
+        // ** REMOVED the event listener that prevented default form submission **
+        // document.getElementById('doctorLoginForm').addEventListener('submit', function(event) { ... });
+
+    </script>
+</body>
+</html>

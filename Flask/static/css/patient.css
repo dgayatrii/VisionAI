@@ -1,0 +1,458 @@
+.patient {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  min-width: 1920px;
+  min-height: 1024px;
+  position: relative;
+  font-family: "Albert Sans", Helvetica;
+}
+
+.patient .nav {
+  display: flex;
+  width: 1922px;
+  height: 82px;
+  align-items: center;
+  gap: 1170px;
+  padding: 33px 64px;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--div);
+}
+
+.patient .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -5.00px;
+  margin-bottom: -3.00px;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .rectangle {
+  top: 80px;
+  height: 88px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--div);
+  position: absolute;
+  left: 0;
+  width: 1920px;
+}
+
+.patient .frame {
+  position: absolute;
+  top: 112px;
+  left: 1881px;
+  width: 24px;
+  height: 24px;
+}
+
+.patient .vector {
+  position: absolute;
+  width: 50.00%;
+  height: 25.00%;
+  top: 35.42%;
+  left: 22.92%;
+}
+
+.patient .ellipse {
+  position: absolute;
+  top: 93px;
+  left: 1811px;
+  width: 61px;
+  height: 61px;
+  object-fit: cover;
+}
+
+.patient .div {
+  position: absolute;
+  top: 106px;
+  left: 1753px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  border: 1px solid;
+  border-color: var(--div);
+}
+
+.patient .text-wrapper-2 {
+  position: absolute;
+  top: 97px;
+  left: 64px;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.patient .frame-2 {
+  position: absolute;
+  top: 112px;
+  left: 1759px;
+  width: 24px;
+  height: 24px;
+}
+
+.patient .img {
+  position: absolute;
+  width: 74.64%;
+  height: 83.18%;
+  top: 6.32%;
+  left: 10.60%;
+}
+
+.patient .vector-2 {
+  position: absolute;
+  width: 25.00%;
+  height: 25.00%;
+  top: 35.42%;
+  left: 35.42%;
+}
+
+.patient .rectangle-2 {
+  top: 166px;
+  height: 468px;
+  background-color: #f0f8ff;
+  position: absolute;
+  left: 0;
+  width: 1920px;
+}
+
+.patient .text-wrapper-3 {
+  position: relative;
+
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .text-wrapper-4 {
+  position: relative;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .text-wrapper-5 {
+  position: relative;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .text-wrapper-6 {
+  position: relative;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .text-wrapper-7 {
+  position: relative;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .text-wrapper-8 {
+  position: absolute;
+  font-family: "Albert Sans", Helvetica;
+  font-weight: 500;
+  color: #052818;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.patient .div-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16.28px;
+  padding: 19.53px 66.74px;
+  position: absolute;
+  top: 511px;
+  left: calc(50.00% + 28px);
+  background-color: #0088ff;
+  border-radius: 19.21px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.patient .text-wrapper-9 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.92px;
+  font-family: "Albert Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.patient .frame-3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16.28px;
+  padding: 19.53px 66.74px;
+  position: absolute;
+  top: 511px;
+  left: 605px;
+  background-color: #ffffff;
+  border-radius: 19.21px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+.patient .text-wrapper-10 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.92px;
+  font-family: "Albert Sans-Bold", Helvetica;
+  font-weight: 700;
+  color: #17a1ed;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+/* Original CSS should be injected here */
+
+.patient-info {
+  margin: 0;
+  padding: 0;
+}
+
+.info-item {
+  margin: 0;
+  padding: 0;
+}
+
+.info-item dt {
+  display: inline;
+}
+
+.info-item dd {
+  display: inline;
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+
+}
+
+.patient .frame,
+.patient .div,
+.patient .frame-2,
+.patient .div-wrapper,
+.patient .frame-3 {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.patient .frame:hover,
+.patient .div:hover,
+.patient .frame-2:hover,
+.patient .div-wrapper:hover,
+.patient .frame-3:hover {
+  opacity: 0.8;
+}
+
+.patient .frame:active,
+.patient .div:active,
+.patient .frame-2:active,
+.patient .div-wrapper:active,
+.patient .frame-3:active {
+  opacity: 0.6;
+}
+
+.patient .frame {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.patient .div {
+  background: transparent;
+}
+
+.patient .frame-2 {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.patient .div-wrapper {
+  border: none;
+}
+
+.patient .frame-3 {
+  border: none;
+}
+
+/* === Small overrides to layout content inside the blue bar (.rectangle-2) === */
+
+/* keep blue background full width but center & limit content */
+.patient .rectangle-2 {
+  position: relative;        /* allow children to be positioned normally */
+  padding: 48px 64px;        /* inner spacing */
+  box-sizing: border-box;
+  background-color: #f0f8ff; /* preserve existing bg */
+  display: block;
+}
+
+/* make content inside flow normally (undo absolute positioning) */
+.patient .rectangle-2 .text-wrapper-5,
+.patient .rectangle-2 .patient-info,
+.patient .rectangle-2 .button-group {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  width: auto !important;
+  margin: 0;
+}
+
+/* constrain content width and center it */
+.patient .rectangle-2 > .content,
+.patient .rectangle-2 .patient-info,
+.patient .rectangle-2 .text-wrapper-5 {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* heading spacing */
+.patient .rectangle-2 .text-wrapper-5 {
+  margin-bottom: 16px;
+  color: #052818;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+/* patient-info: show items vertically on small screens, inline blocks on wide screens */
+.patient .rectangle-2 .patient-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;      /* row-gap then column-gap */
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* each info item styling */
+.patient .rectangle-2 .info-item {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  background: transparent;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+/* label (hidden element kept for accessibility) - use dd for visible text */
+.patient .rectangle-2 .info-item dd {
+  margin: 0;
+  color: #052818;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+/* button group: keep buttons inline and properly placed */
+.patient .rectangle-2 .button-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+
+/* override absolute positioning on the buttons and style them */
+.patient .rectangle-2 .frame-3,
+.patient .rectangle-2 .div-wrapper {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.08);
+}
+
+/* ensure blue primary button looks good */
+.patient .rectangle-2 .div-wrapper {
+  background-color: #0088ff;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ensure secondary button styling */
+.patient .rectangle-2 .frame-3 {
+  background-color: #f0f8ff;
+  color: #17a1ed;
+  padding: 14px 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(23,161,237,0.15);
+  cursor: pointer;
+}
+
+/* responsive tweaks — stack items on narrow screens */
+@media (max-width: 1000px) {
+  .patient .rectangle-2 {
+    padding: 24px;
+  }
+  .patient .rectangle-2 .patient-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .patient .rectangle-2 .button-group {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - {{ user.full_name or 'Patient' }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Albert Sans', sans-serif; background-color: #f3f4f6; }
+        .report-card { transition: box-shadow 0.3s ease-in-out; }
+        .report-card:hover { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+        .flash-message { margin-bottom: 1.5rem; padding: 1rem; border-radius: 0.375rem; border-width: 1px; }
+        .flash-danger { background-color: #fee2e2; border-color: #f87171; color: #b91c1c; }
+        .flash-success { background-color: #dcfce7; border-color: #86efac; color: #166534; }
+        .flash-warning { background-color: #fef3c7; border-color: #fcd34d; color: #92400e; }
+        .flash-info { background-color: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-600">VisionAI Patient Portal</div>
+            <div>
+                <span class="text-gray-600 mr-4">Welcome, {{ user.full_name or 'Patient' }}</span>
+                <a href="{{ url_for('logout') }}" class="py-2 px-4 bg-red-500 text-white rounded-lg hover:bg-red-600 transition text-sm font-medium">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            <div>
+              {% for category, message in messages %}
+                <div class="flash-message flash-{{ category }}" role="alert">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <section class="bg-white p-6 rounded-xl shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 border-b pb-2">Your Profile</h2>
+            {% if user %}
+            <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-3 text-gray-700">
+                <div><dt class="font-medium text-gray-500">Full Name:</dt> <dd>{{ user.full_name }}</dd></div>
+                <div><dt class="font-medium text-gray-500">Email (Patient ID):</dt> <dd>{{ user.username }}</dd></div>
+                <div><dt class="font-medium text-gray-500">Age:</dt> <dd>{{ user.age or 'N/A' }}</dd></div>
+                <div><dt class="font-medium text-gray-500">Gender:</dt> <dd>{{ user.gender or 'N/A' }}</dd></div>
+                <div><dt class="font-medium text-gray-500">Contact:</dt> <dd>{{ user.contact_number or 'N/A' }}</dd></div>
+                <div class="md:col-span-2"><dt class="font-medium text-gray-500">Address:</dt> <dd>{{ user.address or 'N/A' }}</dd></div>
+            </dl>
+            {% else %}
+            <p class="text-gray-500">Could not load profile details.</p>
+            {% endif %}
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Your Screening Reports</h2>
+            <div class="space-y-6">
+                {% if reports %}
+                    {% for report in reports %}
+                    <div class="bg-white p-5 rounded-xl shadow-md report-card flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                        <div>
+                            <p class="text-sm text-gray-500">Report ID: <span class="font-mono text-xs">{{ report.report_id[:8] }}...</span></p>
+                            <p class="text-lg font-medium text-gray-800">
+                                Screening Date: <span class="font-normal">{{ report.created_at[:10] }}</span> 
+                            </p>
+                             <p class="mt-1">
+                                Assessment:
+                                {% set status_key = (report.combined_result | lower).replace(' ', '_') %}
+                                <span class="font-semibold px-2 py-0.5 rounded text-xs
+                                    {% if status_key == 'no_dr' %} bg-green-100 text-green-800 border border-green-200
+                                    {% elif status_key == 'mild' %} bg-yellow-100 text-yellow-800 border border-yellow-200
+                                    {% elif status_key == 'moderate' %} bg-orange-100 text-orange-800 border border-orange-200
+                                    {% elif status_key == 'severe' %} bg-red-100 text-red-800 border border-red-200
+                                    {% elif status_key == 'proliferative_dr' %} bg-purple-100 text-purple-800 border border-purple-200
+                                    {% else %} bg-gray-100 text-gray-800 border border-gray-200 {% endif %}">
+                                    {{ report.combined_result.replace('_', ' ') }} 
+                                </span>
+                            </p>
+                        </div>
+                        <div class="flex space-x-3 mt-3 md:mt-0 flex-shrink-0">
+                             <a href="{{ url_for('patient_report', report_id=report.report_id, action='view') }}" target="_blank"
+                                class="py-2 px-5 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition text-sm font-medium shadow-sm">
+                                View Report
+                             </a>
+                             <a href="{{ url_for('patient_report', report_id=report.report_id, action='download') }}"
+                                class="py-2 px-5 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition text-sm font-medium shadow-sm">
+                                Download PDF
+                             </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="bg-white p-6 rounded-xl shadow text-center text-gray-500">
+                        No screening reports found for your account ({{ session.username }}). Reports generated by your doctor using this email as the Patient ID will appear here.
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

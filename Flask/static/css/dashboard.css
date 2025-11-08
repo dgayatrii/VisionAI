@@ -1,0 +1,73 @@
+
+        /* Apply Albert Sans font globally and ensure box-sizing */
+        body {
+            font-family: 'Albert Sans', sans-serif;
+            background-color: #f7f7f9; /* Mimicking the light background */
+        }
+
+        /* Custom style for active sidebar link: Light blue background, blue text/icon, and left bar */
+        .active-link {
+            /* Use Tailwind blue-600 for text/icon and blue-50 for background */
+            color: #0088FF; 
+            background-color: #eff6ff; 
+            /* Blue left bar for prominence */
+            border-left: 4px solid #0088FF; 
+            /* Ensure text color is reset to dark for inactive links */
+        }
+        
+        /* Updated hover state for non-active links to use a different text color for contrast */
+        .sidebar-nav-link:hover {
+            background-color: #f3f4f6; /* Light gray hover */
+        }
+
+
+        /* Responsive layout for sidebar on mobile */
+        @media (max-width: 768px) {
+            .sidebar-container {
+                /* On small screens, hide the sidebar by default */
+                display: none;
+            }
+            .main-content-container {
+                margin-left: 0;
+            }
+        }
+        
+        /* Custom styles for the status badges */
+        .status-badge {
+            @apply px-3 py-1 text-xs font-semibold rounded-lg text-center;
+        }
+
+        .status-none {
+            background-color: #e9f5e9; /* Light Green */
+            color: #388e3c; /* Dark Green */
+        }
+        .status-mild {
+            background-color: #fff8e1; /* Light Yellow */
+            color: #fbc02d; /* Dark Yellow */
+        }
+        .status-moderate {
+            background-color: #fff3e0; /* Light Orange */
+            color: #fb8c00; /* Dark Orange */
+        }
+        .status-severe {
+            background-color: #ffebee; /* Light Red */
+            color: #d32f2f; /* Dark Red */
+        }
+        .status-prolific {
+            background-color: #fce4ec; /* Light Pink/Coral */
+            color: #e91e63; /* Dark Pink/Coral */
+        }
+
+        /* Custom scrollbar styling to match image (thin, dark scrollbar) */
+        .scrollable-table::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .scrollable-table::-webkit-scrollbar-thumb {
+            background: #9ca3af; /* Tailwind gray-400 */
+            border-radius: 3px;
+        }
+
+        .scrollable-table::-webkit-scrollbar-track {
+            background: #f3f4f6; /* Tailwind gray-100 */
+        }

@@ -1,0 +1,9 @@
+:root {
+  --div: rgba(224, 224, 224, 1);
+  --head-font-family: "Aleo", Helvetica;
+  --head-font-weight: 400;
+  --head-font-size: 12px;
+  --head-letter-spacing: 0px;
+  --head-line-height: normal;
+  --head-font-style: normal;
+}

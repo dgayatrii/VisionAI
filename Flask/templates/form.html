@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Report Form</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Albert Sans Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}" />
+    <style>
+        /* Hide the default file input button */
+        .hidden-file-input {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+        /* Style for flash messages */
+        .flash-message { margin-bottom: 1.5rem; padding: 1rem; border-radius: 0.375rem; border-width: 1px; }
+        .flash-danger { background-color: #fee2e2; border-color: #f87171; color: #b91c1c; }
+        .flash-success { background-color: #dcfce7; border-color: #86efac; color: #166534; }
+        .flash-warning { background-color: #fef3c7; border-color: #fcd34d; color: #92400e; }
+        .flash-info { background-color: #dbeafe; border-color: #93c5fd; color: #1e40af; }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100">
+
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar-container w-64 bg-white shadow-xl md:flex flex-col hidden">
+            <div class="p-6">
+                <p class="text-xl font-bold text-gray-800">VisionAI</p>
+            </div>
+            <nav class="flex-1 px-4 py-6 space-y-2">
+                <!-- Patient List Link -->
+                <a href="{{ url_for('dashboard') }}" class="flex items-center p-3 text-gray-600 rounded-lg hover:bg-gray-100 transition duration-150">
+                    <img class='p-2'src="{{ url_for('static', filename='images/doctor/menu-patient-black.svg') }}" alt="">
+                    <span>Patient List</span>
+                </a>
+                
+                <!-- Generate Report Link (Active) -->
+                <a href="{{ url_for('form') }}" class="active-link flex items-center p-3 font-semibold rounded-lg transition duration-150">
+                    <img class='p-2'src="{{ url_for('static', filename='images/doctor/menu-report-blue.svg') }}" alt="">
+                    <span>Generate Report</span>
+                </a>
+
+                <!-- Logout Link -->
+                <a href="{{ url_for('logout') }}" class="flex items-center p-3 text-gray-600 rounded-lg hover:bg-gray-100 transition duration-150">
+                     <img class='p-2'src="{{ url_for('static', filename='images/doctor/menu-logout.svg') }}" alt="">
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content-container flex-1 p-8 md:p-12 overflow-y-auto">
+            <!-- Dynamic Doctor Name -->
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Hello, Dr. {{ doctor.full_name or 'Doctor' }}</h1>
+            <h2 class="text-2xl font-semibold text-gray-900 mb-8 mt-6">Please Enter Patient's Details</h2>
+
+            <!-- Flask Flash Message Display -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div>
+                  {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}" role="alert">
+                      {{ message }}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <!-- Patient Details Form -->
+            <form id="patientForm" action="{{ url_for('generate_report') }}" method="post" enctype="multipart/form-data">
+                
+                <!-- Row 1: Patient ID, Name, Age, Gender -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+                    <div>
+                        <label for="patient-id" class="block text-sm font-medium text-gray-700 mb-1">Patient ID (Patient's Registered Email)</label>
+                        <input type="email" id="patient-id" name="patient_id" placeholder="Patient's Email" class="form-input-field" required>
+                    </div>
+                    <div>
+                        <label for="patient-name" class="block text-sm font-medium text-gray-700 mb-1">Patient's Name</label>
+                        <input type="text" id="patient-name" name="patient_name" placeholder="Patient's Name" class="form-input-field" required>
+                    </div>
+                    <div>
+                        <label for="age" class="block text-sm font-medium text-gray-700 mb-1">Age</label>
+                        <input type="number" id="age" name="age" placeholder="Age" class="form-input-field" min="0" max="150" required>
+                    </div>
+                    <div>
+                        <label for="gender" class="block text-sm font-medium text-gray-700 mb-1">Gender</label>
+                        <select id="gender" name="gender" class="form-input-field appearance-none" required>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Row 2: Medical Details -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <div>
+                        <label for="diabetes-duration" class="block text-sm font-medium text-gray-700 mb-1">Diabetes Duration</label>
+                        <input type="text" id="diabetes-duration" name="diabetes_duration" placeholder="e.g., 5 years" class="form-input-field">
+                    </div>
+                    <div>
+                        <label for="blood-pressure" class="block text-sm font-medium text-gray-700 mb-1">Blood Pressure</label>
+                        <input type="text" id="blood-pressure" name="blood_pressure" placeholder="e.g., 120/80" class="form-input-field">
+                    </div>
+                    <div>
+                        <label for="medications" class="block text-sm font-medium text-gray-700 mb-1">Medications</label>
+                        <input type="text" id="medications" name="medications" placeholder="Current medications" class="form-input-field">
+                    </div>
+                    <div>
+                        <label for="other-conditions" class="block text-sm font-medium text-gray-700 mb-1">Other Conditions</label>
+                        <input type="text" id="other-conditions" name="other_conditions" placeholder="e.g., Hypertension" class="form-input-field">
+                    </div>
+                </div>
+
+                <!-- Eye Image Upload Areas -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
+
+                    <!-- Left Eye Upload -->
+                    <div class="flex flex-col items-center justify-center p-0 h-96 rounded-xl relative overflow-hidden bg-gray-50 border-2 border-dashed border-gray-300">
+                        <!-- This input is hidden but triggered by the label -->
+                        <input type="file" id="left-eye-file" name="left_eye" class="hidden-file-input" accept="image/png, image/jpeg, image/jpg" required>
+                        
+                        <!-- Image Preview: This is where the selected image will be shown -->
+                        <img id="left-eye-preview" class="absolute inset-0 w-full h-full object-contain rounded-xl hidden" alt="Left Eye Preview">
+                        
+                        <!-- Default Placeholder: This is what you click on -->
+                        <label for="left-eye-file" id="left-eye-default-content" class="flex flex-col items-center justify-center w-full h-full cursor-pointer absolute inset-0 transition-opacity hover:opacity-70">
+                            <img src="{{ url_for('static', filename='images/doctor/left-eye.png') }}" class="w-2/3 h-2/3 object-contain opacity-40" alt="Left Eye Placeholder">
+                            <span class="mt-2 text-sm font-semibold text-gray-500">Click to upload Left Eye scan</span>
+                        </label>
+                    </div>
+
+                    <!-- Right Eye Upload -->
+                    <div class="flex flex-col items-center justify-center p-0 h-96 rounded-xl relative overflow-hidden bg-gray-50 border-2 border-dashed border-gray-300">
+                        
+                        <input type="file" id="right-eye-file" name="right_eye" class="hidden-file-input" accept="image/png, image/jpeg, image/jpg" required>
+                        
+                        <!-- Image Preview -->
+                        <img id="right-eye-preview" class="absolute inset-0 w-full h-full object-contain rounded-xl hidden" alt="Right Eye Preview">
+
+                        <!-- Default Placeholder -->
+                        <label for="right-eye-file" id="right-eye-default-content" class="flex flex-col items-center justify-center w-full h-full cursor-pointer absolute inset-0 transition-opacity hover:opacity-70">
+                            <img src="{{ url_for('static', filename='images/doctor/right-eye.png') }}" class="w-2/3 h-2/3 object-contain opacity-40" alt="Right Eye Placeholder">
+                            <span class="mt-2 text-sm font-semibold text-gray-500">Click to upload Right Eye scan</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="flex justify-center">
+                    <button type="submit" class="px-12 py-3 bg-blue-500 text-white font-semibold rounded-full shadow-lg hover:bg-blue-600 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                        Generate Report
+                    </button>
+                </div>
+            </form>
+
+        </main>
+    </div>
+
+    <!-- ** THIS SCRIPT MAKES THE PREVIEW WORK ** -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to set up a file input preview
+            function setupFileInput(inputId, previewId, defaultId) {
+                const input = document.getElementById(inputId);
+                const previewImage = document.getElementById(previewId);
+                const defaultContent = document.getElementById(defaultId);
+                
+                if (!input || !previewImage || !defaultContent) {
+                    console.error("Image preview script: One or more elements not found.");
+                    return;
+                }
+
+                input.addEventListener('change', (event) => {
+                    const file = event.target.files[0];
+
+                    if (file) {
+                        // Create a URL for the selected file
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            // Set the src of the <img> tag to the file's URL
+                            previewImage.src = e.target.result;
+                            // Show the <img> tag
+                            previewImage.classList.remove('hidden');
+                            // Hide the placeholder <label>
+                            defaultContent.classList.add('hidden');
+                        };
+                        reader.readAsDataURL(file);
+                    } else {
+                        // If no file is selected (e.g., user hits cancel)
+                        // Hide the <img> tag
+                        previewImage.src = '';
+                        previewImage.classList.add('hidden');
+                        // Show the placeholder <label>
+                        defaultContent.classList.remove('hidden');
+                    }
+                });
+            }
+
+            // Set up the preview for both file inputs
+            setupFileInput('left-eye-file', 'left-eye-preview', 'left-eye-default-content');
+            setupFileInput('right-eye-file', 'right-eye-preview', 'right-eye-default-content');
+
+            // Removed the event.preventDefault() from the form to allow submission
+            // The form will now submit to the backend.
+            document.getElementById('patientForm').addEventListener('submit', (e) => {
+                // You can add a check here to make sure files are uploaded if 'required' isn't enough
+                const leftFile = document.getElementById('left-eye-file').files[0];
+                const rightFile = document.getElementById('right-eye-file').files[0];
+
+                if (!leftFile || !rightFile) {
+                    // This check is a backup, the 'required' attribute should handle it
+                    console.warn('Form submission stopped: Both eye scans are required.');
+                    e.preventDefault(); 
+                    // You could show a custom flash message here
+                } else {
+                    console.log('Form submitting to backend...');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+

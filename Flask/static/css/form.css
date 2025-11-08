@@ -1,0 +1,36 @@
+
+        /* Apply Inter font globally and ensure box-sizing */
+        body {
+            font-family: "Albert Sans";
+            background-color: #f7f7f9; /* Mimicking the light background */
+        }
+
+        /* The custom border/hover styles for .file-upload-area have been removed. */
+        
+        /* Custom style for active sidebar link */
+        .active-link {
+            border-left: 4px solid #3b82f6;
+            color: #0088FF;
+            background-color: #eff6ff; /* Tailwind blue-50 for subtle highlight */
+        }
+        
+        /* Input and Select styling consistency */
+        .form-input-field {
+            @apply w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition duration-150 ease-in-out;
+        }
+        
+        /* Hide file input element */
+        .hidden-file-input {
+            display: none;
+        }
+
+        /* Responsive layout for sidebar on mobile */
+        @media (max-width: 768px) {
+            .sidebar-container {
+                /* On small screens, hide the sidebar by default and show a logo/menu toggle */
+                display: none;
+            }
+            .main-content-container {
+                margin-left: 0;
+            }
+        }
